@@ -519,6 +519,9 @@ function __icon_map() {
    "Sublime Text")
         icon_result=":sublime_text:"
         ;;
+   "时光序")
+        icon_result=":todoist:"
+        ;;
    "Tana")
         icon_result=":tana:"
         ;;

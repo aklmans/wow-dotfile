@@ -1,28 +1,24 @@
 #!/bin/bash
 
 zen_on() {
-  sketchybar --set wifi drawing=off \
-             --set apple.logo drawing=off \
+  sketchybar --set apple.logo drawing=off \
              --set calendar icon.drawing=off \
+             --set battery icon.drawing=off \
              --set front_app drawing=off \
              --set volume_icon drawing=off \
              --set spotify.anchor drawing=off \
              --set spotify.play updates=off \
-             --set brew drawing=off \
-             --set volume drawing=off \
-             --set github.bell drawing=off
+             --set volume drawing=off
 }
 
 zen_off() {
-  sketchybar --set wifi drawing=on \
-             --set apple.logo drawing=on \
+  sketchybar --set apple.logo drawing=on \
              --set calendar icon.drawing=on \
+             --set battery icon.drawing=on \
              --set front_app drawing=on \
              --set volume_icon drawing=on \
              --set spotify.play updates=on \
-             --set brew drawing=on \
-             --set volume drawing=on \
-             --set github.bell drawing=on
+             --set volume drawing=on
 }
 
 if [ "$1" = "on" ]; then
