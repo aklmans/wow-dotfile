@@ -43,15 +43,13 @@ yabai -m config                                 \
     focus_follows_mouse          off            \
     mouse_drop_action            swap
 
-    
+
 # ===== Rules ==================================
-yabai -m rule --add app="^App Store$" manage=off
-# yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="System Settings" manage=off
-yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
-yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|SoftwareUpdate|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 
 yabai -m rule --add app="^飞书$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Feishu$" sticky=on layer=above manage=off
@@ -62,7 +60,6 @@ yabai -m rule --add app="^AppCleaner$" sticky=off layer=above manage=off
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
 # yabai -m rule --add app="^Things$" manage=off
-# yabai -m rule --add app="^Bartender 5$" manage=off
 # yabai -m rule --add app="^Magnet$" manage=off
 yabai -m rule --add app="^WeChat$" manage=off
 yabai -m rule --add app="^微信$" manage=off
@@ -76,103 +73,50 @@ yabai -m rule --add app="^Pieces$" manage=off
 yabai -m rule --add app="^Loopback$" manage=off
 yabai -m rule --add app="^钉钉$" manage=off
 yabai -m rule --add app="^DingTalk$" manage=off
+yabai -m rule --add app="^(Tencent Lemon)$" manage=off
 
-#yabai -m rule --add app="^GoLand$" title!="^(Settings)$" manage=off
-# 使 GoLand 的其他窗口不浮动
-yabai -m rule --add app="^GoLand$" title!="^Settings$" manage=on
-# 使 GoLand 的常用窗口浮动
-yabai -m rule --add app="^GoLand$" title="^Settings$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(Add File to Git)$" manage=off
-yabai -m rule --add app="^GoLand$" title="^Delete$" manage=off
-yabai -m rule --add app="^GoLand$" title="^Deployment$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(New Project)$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(Create Class)$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(Project Structure)$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(Local History: )$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(Create Run Configuration: )$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(Run Target)$" manage=off
-yabai -m rule --add app="^GoLand$" title="^(Run/Debug Configurations)$" manage=off
+# 使 GoLand 的窗口不浮动
+yabai -m rule --add app="^GoLand$" manage=on
+# 使 GoLand 的特定窗口浮动
+yabai -m rule --add app="^(GoLand)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^GoLand$" title="^Push Commits to .*$" manage=off
+yabai -m rule --add app="^GoLand$" title="^Create Run Configuration: .*$" manage=off
 
-
-# 使 IntelliJ IDEA 的其他窗口不浮动
-yabai -m rule --add app="^IntelliJ IDEA$" title!="^Settings$" manage=on
+# 使 IntelliJ IDEA 的窗口不浮动
+yabai -m rule --add app="^(IntelliJ IDEA)$" manage=on
 # 使 IntelliJ IDEA 的设置窗口浮动
-yabai -m rule --add app="^IntelliJ IDEA$" title="^Settings$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Add File to Git)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^Delete$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^Deployment$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(New Project)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Create Class)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Project Structure)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Local History: )$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Create Run Configuration: )$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Run Target)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^(Run/Debug Configurations)$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA)$" title="^Push Commits to .*$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA)$" title="^Create Run Configuration: .*$" manage=off
 
-# 使 IntelliJ IDEA 的其他窗口不浮动
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title!="^Settings$" manage=on
+# 使 IntelliJ IDEA 的窗口不浮动
+yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" manage=on
 # 使 IntelliJ IDEA 的设置窗口浮动
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^Settings$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^Settings$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(Add File to Git)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^Delete$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^Deployment$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(New Project)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(Create Class)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(Project Structure)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(Local History: )$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(Create Run Configuration: )$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(Run Target)$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA-EAP$" title="^(Run/Debug Configurations)$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^Push Commits to .*$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^Create Run Configuration: .*$" manage=off
 
-
-# 使 WebStorm 的其他窗口不浮动
-yabai -m rule --add app="^WebStorm$" title!="^Settings$" manage=on
+# 使 WebStorm 的窗口不浮动
+yabai -m rule --add app="^(WebStorm)$" title!="^Settings$" manage=on
 # 使 WebStorm 的设置窗口浮动
-yabai -m rule --add app="^WebStorm$" title="^Settings$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(Add File to Git)$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^Delete$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^Deployment$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(New Project)$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(Create Class)$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(Project Structure)$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(Local History: )$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(Create Run Configuration: )$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(Run Target)$" manage=off
-yabai -m rule --add app="^WebStorm$" title="^(Run/Debug Configurations)$" manage=off
 
-# 使 PhpStorm 的其他窗口不浮动
-yabai -m rule --add app="^PhpStorm$" title!="^Settings$" manage=on
+yabai -m rule --add app="^(WebStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(WebStorm)$" title="^Push Commits to .*$" manage=off
+yabai -m rule --add app="^(WebStorm)$" title="^Create Run Configuration: .*$" manage=off
+
+# 使 PhpStorm 的窗口不浮动
+yabai -m rule --add app="^(PhpStorm)$" manage=on
 # 使 PhpStorm 的设置窗口浮动
-yabai -m rule --add app="^PhpStorm$" title="^Settings$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(Add File to Git)$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^Delete$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^Deployment$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(New Project)$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(Create Class)$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(Project Structure)$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(Local History: )$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(Create Run Configuration: )$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(Run Target)$" manage=off
-yabai -m rule --add app="^PhpStorm$" title="^(Run/Debug Configurations)$" manage=off
+yabai -m rule --add app="^(PhpStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(PhpStorm)$" title="^Push Commits to .*$" manage=off
+yabai -m rule --add app="^(PhpStorm)$" title="^Create Run Configuration: .*$" manage=off
 
-# 使 Rust Rover 的其他窗口不浮动
-yabai -m rule --add app="^Rust Rover$" title!="^Settings$" manage=on
+# 使 Rust Rover 的窗口不浮动
+yabai -m rule --add app="^(RustRover)$" manage=on
 # 使 Rust Rover 的设置窗口浮动
-yabai -m rule --add app="^Rust Rover$" title="^Settings$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(Add File to Git)$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^Delete$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^Deployment$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(New Project)$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(Create Class)$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(Project Structure)$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(Local History: )$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(Create Run Configuration: )$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(Run Target)$" manage=off
-yabai -m rule --add app="^Rust Rover$" title="^(Run/Debug Configurations)$" manage=off
-
-yabai -m rule --add app="^Loopback"$" manage=off
-
+yabai -m rule --add app="^(RustRover)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(PhpStorm)$" title="^Push Commits to .*$" manage=off
+yabai -m rule --add app="^(RustRover)$" title="^Create Run Configuration: .*$" manage=off
 
 yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off layer=above
 
