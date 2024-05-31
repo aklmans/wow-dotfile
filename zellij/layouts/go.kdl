@@ -1,0 +1,22 @@
+layout {
+    tab name="Aklman's App" {    
+        pane name="Aklman's App" split_direction="vertical" size="70%" {
+            pane edit="main.go"
+        
+            pane split_direction="horizontal" size="30%" {
+                pane split_direction="vertical" size="60%" {
+                }
+                pane split_direction="vertical" size="40%" {
+                } 
+            }
+            
+        }
+    }
+}
+keybinds {
+    shared {
+        bind "Alt 1" { Run "git" "status"; }
+        bind "Alt 2" { Run "git" "diff"; }
+        bind "Alt 3" { Run "exa" "--color" "always"; }
+    }
+}
