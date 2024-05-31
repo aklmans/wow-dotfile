@@ -78,21 +78,21 @@ yabai -m rule --add app="^(Tencent Lemon)$" manage=off
 # 使 GoLand 的窗口不浮动
 yabai -m rule --add app="^GoLand$" manage=on
 # 使 GoLand 的特定窗口浮动
-yabai -m rule --add app="^(GoLand)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(GoLand)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
 yabai -m rule --add app="^GoLand$" title="^Push Commits to .*$" manage=off
 yabai -m rule --add app="^GoLand$" title="^Create Run Configuration: .*$" manage=off
 
 # 使 IntelliJ IDEA 的窗口不浮动
 yabai -m rule --add app="^(IntelliJ IDEA)$" manage=on
 # 使 IntelliJ IDEA 的设置窗口浮动
-yabai -m rule --add app="^(IntelliJ IDEA)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
 yabai -m rule --add app="^(IntelliJ IDEA)$" title="^Push Commits to .*$" manage=off
 yabai -m rule --add app="^(IntelliJ IDEA)$" title="^Create Run Configuration: .*$" manage=off
 
 # 使 IntelliJ IDEA 的窗口不浮动
 yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" manage=on
 # 使 IntelliJ IDEA 的设置窗口浮动
-yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
 yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^Push Commits to .*$" manage=off
 yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^Create Run Configuration: .*$" manage=off
 
@@ -100,21 +100,21 @@ yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^Create Run Configuration
 yabai -m rule --add app="^(WebStorm)$" title!="^Settings$" manage=on
 # 使 WebStorm 的设置窗口浮动
 
-yabai -m rule --add app="^(WebStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(WebStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
 yabai -m rule --add app="^(WebStorm)$" title="^Push Commits to .*$" manage=off
 yabai -m rule --add app="^(WebStorm)$" title="^Create Run Configuration: .*$" manage=off
 
 # 使 PhpStorm 的窗口不浮动
 yabai -m rule --add app="^(PhpStorm)$" manage=on
 # 使 PhpStorm 的设置窗口浮动
-yabai -m rule --add app="^(PhpStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(PhpStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
 yabai -m rule --add app="^(PhpStorm)$" title="^Push Commits to .*$" manage=off
 yabai -m rule --add app="^(PhpStorm)$" title="^Create Run Configuration: .*$" manage=off
 
 # 使 Rust Rover 的窗口不浮动
 yabai -m rule --add app="^(RustRover)$" manage=on
 # 使 Rust Rover 的设置窗口浮动
-yabai -m rule --add app="^(RustRover)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers)$" manage=off
+yabai -m rule --add app="^(RustRover)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
 yabai -m rule --add app="^(PhpStorm)$" title="^Push Commits to .*$" manage=off
 yabai -m rule --add app="^(RustRover)$" title="^Create Run Configuration: .*$" manage=off
 
