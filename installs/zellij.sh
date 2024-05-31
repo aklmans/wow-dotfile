@@ -2,7 +2,7 @@ echo "Installing Zellij: "
 
 echo "Installing Dependencies"
 
-brew zellij
+brew install zellij
 
 echo "Setting up Zellij"
 
