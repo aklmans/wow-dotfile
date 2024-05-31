@@ -37,7 +37,6 @@ brew install --cask tencent-lemon
 
 
 # Terminal
-brew install --cask kitty
 brew install --cask warp
 brew install --cask wezterm
 
@@ -57,16 +56,9 @@ brew install --cask postman
 brew install --cask dash
 brew install --cask docker
 
-brew install --cask imhex
-brew install --cask wireshark
-brew install --cask proxyman
 brew install --cask another-redis-desktop-manager
 brew install --cask microsoft-remote-desktop
 mas install 1296084683  # Cleaner for Xcode
-
-
-# Database
-brew install --cask sequel-ace
 
 # Social
 brew install --cask wechat
