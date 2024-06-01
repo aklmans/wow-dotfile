@@ -21,6 +21,5 @@ mv $HOME/.config/wezterm $HOME/.config/wezterm.backup
 mv $HOME/.wezterm.lua $HOME/.wezterm.lua.backup
 
 cp -r ../wezterm $HOME/.config/wezterm
-mv $HOME/.config/wezterm/.wezterm.lua $HOME/.wezterm.lua
 
 echo "Finished installing Weztem"
