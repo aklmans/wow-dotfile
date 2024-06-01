@@ -74,6 +74,7 @@ yabai -m rule --add app="^Loopback$" manage=off
 yabai -m rule --add app="^钉钉$" manage=off
 yabai -m rule --add app="^DingTalk$" manage=off
 yabai -m rule --add app="^(Tencent Lemon)$" manage=off
+yabai -m rule --add app="^(Bandizip)$" manage=off
 
 # 使 GoLand 的窗口不浮动
 yabai -m rule --add app="^GoLand$" manage=on
