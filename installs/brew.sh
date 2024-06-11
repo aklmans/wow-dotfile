@@ -1,4 +1,4 @@
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Zsh
 brew install zsh
@@ -26,65 +26,73 @@ brew install hugo
 
 
 # Utility
-brew install --cask adguard
-brew install --cask bettermouse
-brew install --cask maczip
-brew install --cask alt-tab
-brew install --cask keycastr
-brew install --cask karabiner-elements
-brew install --cask lulu
-brew install --cask tencent-lemon
-
+brew install adguard
+brew install maczip
+brew install alt-tab
+brew install keycastr
+brew install karabiner-elements
+brew install lulu
+brew install tencent-lemon
+brew install bitwarden
+brew install baidunetdisk
+brew install ogdesign-eagle
+brew install hapigo
+brew install netnewswire
+brew install KeyCombiner
 
 # Terminal
-brew install --cask warp
-brew install --cask wezterm
+brew install warp
+brew install wezterm
 
 # Browser
-brew tap homebrew/cask-versions
-brew install --cask google-chrome
-brew install --cask firefox
-brew install --cask microsoft-edge
-brew install --cask orion
-
-# Filesync
-brew install --cask transmit
+brew install google-chrome
+brew install firefox
+brew install microsoft-edge
+brew install orion
 
 # Development
-brew install --cask visual-studio-code
-brew install --cask postman
-brew install --cask dash
-brew install --cask docker
+brew install visual-studio-code
+brew install postman
+brew install docker
+brew install wechatwebdevtools
+brew info HBuilderX
 
-brew install --cask another-redis-desktop-manager
-brew install --cask microsoft-remote-desktop
+brew install another-redis-desktop-manager
+brew install microsoft-remote-desktop
 mas install 1296084683  # Cleaner for Xcode
 
 # Social
-brew install --cask wechat
-brew install --cask lark
-brew install --cask qq
-brew install --cask dingtalk
-brew install --cask feishu
+brew install wechat
+brew install qq
+brew install dingtalk
+brew install feishu
+brew install wechatwork
 
 # Movie
-brew install --cask mpv
-brew install --cask spotify
+brew install mpv
+brew install spotify
+brew install neteasemusic
 
 # Screen recording
-brew install --cask kap
-brew install --cask obs
+brew install kap
+brew install obs
 
 # Writing
 brew install --cask obsidian
+brew install typora
+brew install wpsoffice-cn
+brew install craft
+brew install yuque
 
 # Programming Language
 ## Golang
 brew install go
+brew install nao1215/tap/gup # Update binaries installed by `go install` command
 
 ## Node.js
 brew tap oven-sh/bun
 brew install node pnpm bun
+brew install deno
 
 ## Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
