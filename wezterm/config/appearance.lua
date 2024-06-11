@@ -54,7 +54,7 @@ return {
    window_close_confirmation = 'NeverPrompt', -- "AlwaysPrompt" | "NeverPrompt" | "PromptIfMultipleTabs"
    window_decorations = "RESIZE", -- "NONE" | "FULL" | "RESIZE" | "BORDER"
    -- text_background_opacity = 0.9,
-	window_background_opacity = 0.7,
+	window_background_opacity = 0.9,
 	macos_window_background_blur = 5,
    window_frame = {
       active_titlebar_bg = '#090909',
