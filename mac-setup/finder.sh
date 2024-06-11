@@ -6,7 +6,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Show all files and their extensions
 defaults write com.apple.finder AppleShowAllExtensions -bool true
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool false
 
 # Show path bar, and layout as multi-column
 defaults write com.apple.finder ShowPathbar -bool true
