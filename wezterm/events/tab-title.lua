@@ -96,7 +96,7 @@ M.setup = function()
       end
 
       -- Left semi-circle
-      _push('rgba(0, 0, 0, 0.4)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_LEFT)
+      -- _push('rgba(0, 0, 0, 0.4)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_LEFT)
 
       -- Admin Icon
       if is_admin then
@@ -115,7 +115,7 @@ M.setup = function()
       _push(bg, fg, { Intensity = 'Bold' }, ' ')
 
       -- Right semi-circle
-      _push('rgba(0, 0, 0, 0.4)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_RIGHT)
+      -- _push('rgba(0, 0, 0, 0.4)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_RIGHT)
 
       return __cells__
    end)
