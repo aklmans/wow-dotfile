@@ -23,6 +23,11 @@ brew install ffmpeg graphviz exiftool ffmpegthumbnailer
 brew install jless jq jc
 ## Writing
 brew install hugo
+## QuickLook Plugin
+brew install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize suspicious-package apparency quicklookase qlvideo webpquicklook
+brew install --cask --no-quarantine syntax-highlight
+xattr -r ~/Library/QuickLook
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
 
 
 # Utility
