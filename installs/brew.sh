@@ -33,7 +33,7 @@ xattr -d -r com.apple.quarantine ~/Library/QuickLook
 # Utility
 brew install adguard
 brew install maczip
-brew install alt-tab
+#brew install alt-tab
 brew install keycastr
 brew install karabiner-elements
 brew install lulu
@@ -44,6 +44,7 @@ brew install ogdesign-eagle
 brew install hapigo
 brew install netnewswire
 brew install KeyCombiner
+brew install rescuetime
 
 # Terminal
 brew install warp
