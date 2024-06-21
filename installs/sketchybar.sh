@@ -1,4 +1,4 @@
-echo "Installing Weztem: "
+echo "Installing Sketchybar: "
 
 echo "Installing Dependencies"
 # Packages
@@ -20,7 +20,7 @@ curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.
 # SbarLua
 (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
 
-echo "Setting up Wezterm"
+echo "Setting up Sketchybar"
 
 mv $HOME/.config/sketchybar $HOME/.config/sketchybar.backup
 cp -r ../sketchybar $HOME/.config/sketchybar
