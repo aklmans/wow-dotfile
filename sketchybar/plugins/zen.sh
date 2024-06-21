@@ -2,6 +2,7 @@
 
 zen_on() {
   sketchybar --set apple.logo drawing=off \
+             --set clock icon.drawing=off \
              --set calendar icon.drawing=off \
              --set battery icon.drawing=off \
              --set front_app drawing=off \
@@ -13,6 +14,7 @@ zen_on() {
 
 zen_off() {
   sketchybar --set apple.logo drawing=on \
+             --set clock icon.drawing=on \
              --set calendar icon.drawing=on \
              --set battery icon.drawing=on \
              --set front_app drawing=on \

@@ -30,6 +30,7 @@ do
   )
 
   sketchybar --add space space.$sid left    \
+	           --set space.$sid background.drawing=off \
              --set space.$sid "${space[@]}" \
              --subscribe space.$sid mouse.clicked
 done
@@ -43,7 +44,7 @@ space_creator=(
   display=active
   click_script='yabai -m space --create'
   script="$PLUGIN_DIR/space_windows.sh"
-  icon.color=$WHITE
+  icon.color=$ORANGE
 )
 
 sketchybar --add item space_creator left               \
