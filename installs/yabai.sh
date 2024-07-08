@@ -12,4 +12,4 @@ cp -r ../yabai $HOME/.config/yabai
 
 echo "Finished installing Yabai"
 
-yabai --start-service
+yabai --restart-service
