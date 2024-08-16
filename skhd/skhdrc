@@ -121,7 +121,7 @@ ctrl + alt - r : brew services restart yabai
 
 
 # Toggle sketchybar
-shift + lalt - space : sketchybar --bar hidden=toggle
+shift + alt - space : sketchybar --bar hidden=toggle
 
 # --- Miscellaneous ---
 # Uncomment these lines if you want to set the layout of the current space to stack or bsp
