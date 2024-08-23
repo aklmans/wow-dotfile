@@ -27,14 +27,9 @@ ya pack -a Reledia/hexyl
 ya pack -a kirasok/epub-preview
 # https://github.com/Reledia/miller.yazi
 ya pack -a Reledia/miller
-# https://github.com/Urie96/preview.yazi
-ya pack -a Urie96/preview
 # https://github.com/yazi-rs/plugins/tree/main
 ya pack -a yazi-rs/plugins:max-preview
 ya pack -a yazi-rs/plugins:chmod
 ya pack -a yazi-rs/plugins:smart-filter
-
-echo "updating plugins"
-ya pack -u
 
 echo "Finished installing Yazi"
