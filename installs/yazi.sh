@@ -25,13 +25,15 @@ ya pack -a ndtoan96/ouch
 # https://github.com/lpnh/fg.yazi
 ya pack -a lpnh/fg
 ya pack -a Rolv-Apneseth/bypass
-ya pack -a Rolv-Apneseth/starship
 ya pack -a Reledia/hexyl
 ya pack -a kirasok/epub-preview
 # https://github.com/yazi-rs/plugins/tree/main
 ya pack -a yazi-rs/plugins:max-preview
 ya pack -a yazi-rs/plugins:chmod
 ya pack -a yazi-rs/plugins:smart-filter
+ya pack -a yazi-rs/plugins:full-border
+
+git clone https://github.com/Urie96/preview.yazi.git ~/.config/yazi/plugins/preview.yazi
 
 # echo "updating plugins"
 # ya pack -u
