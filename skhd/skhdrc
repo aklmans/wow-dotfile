@@ -8,132 +8,69 @@
 #cmd - 9 : bash ~/.config/skhd/scripts/open_wezterm.sh
 #cmd - 0 : bash ~/.config/skhd/scripts/open_google.sh
 
-# --- Stack Navigation ---
-## Focus next stacked window
+# Stack Navigation
+# Stack focused window with the window under the mouse cursor
+shift + alt - m : yabai -m window --stack mouse
 alt - n : yabai -m window --focus stack.next
-
-## Focus previous stacked window
 alt - p : yabai -m window --focus stack.prev
 
-
-# --- Navigation ---
-
-## Change window focus within space
+# Window Navigation
+alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
-alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
 
-## Change focus between external displays (left and right)
+# Display Navigation
 alt - s : yabai -m display --focus west
 alt - g : yabai -m display --focus east
 
-# --- Modifying the Layout ---
-
-## Rotate layout clockwise
+# Modifying Layout
 shift + alt - r : yabai -m space --rotate 270
-
-## Flip layout along y-axis
 shift + alt - y : yabai -m space --mirror y-axis
-
-## Flip layout along x-axis
 shift + alt - x : yabai -m space --mirror x-axis
-
-## Set insertion point for focused container
-shift + ctrl + cmd - h : yabai -m window --insert west
-shift + ctrl + cmd - j : yabai -m window --insert south
-shift + ctrl + cmd - k : yabai -m window --insert north
-shift + ctrl + cmd - l : yabai -m window --insert east
-
-## Toggle window float and set grid size
 shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-
-## Toggle split mode for the focused window
 shift + alt - v : yabai -m window --toggle split
 
-## Stack focused window with the window under the mouse cursor
-shift + alt - m : yabai -m window --stack mouse
-
-# --- Modifying Window Size ---
-
-## Maximize a window
-shift + alt - z : yabai -m window --toggle zoom-fullscreen
-
-## Toggle native fullscreen for a window
+# Window Size Modification
+alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
-
-## Balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
+shift + alt - 0 : yabai -m space --balance
 
-## Resize windows
-ctrl + cmd - left  : yabai -m window --resize left:-50:0; yabai -m window --resize right:-50:0
-ctrl + cmd - down  : yabai -m window --resize bottom:0:50; yabai -m window --resize top:0:50
-ctrl + cmd - up    : yabai -m window --resize top:0:-50; yabai -m window --resize bottom:0:-50
-ctrl + cmd - right : yabai -m window --resize right:50:0; yabai -m window --resize left:50:0
+# Window Resizing
+ctrl + alt - left  : yabai -m window --resize left:-50:0; yabai -m window --resize right:-50:0
+ctrl + alt - down  : yabai -m window --resize bottom:0:50; yabai -m window --resize top:0:50
+ctrl + alt - up    : yabai -m window --resize top:0:-50; yabai -m window --resize bottom:0:-50
+ctrl + alt - right : yabai -m window --resize right:50:0; yabai -m window --resize left:50:0
 
-# --- Moving Windows Around ---
-
-## Swap windows
+# Moving Windows
+shift + alt - h : yabai -m window --swap west
 shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
-shift + alt - h : yabai -m window --swap west
 shift + alt - l : yabai -m window --swap east
+shift + alt - 1 : yabai -m window --swap first
+shift + alt - p : yabai -m window --swap prev
+shift + alt - n : yabai -m window --swap next
 
-## Move window to the "main" location (top left of the screen)
-shift + alt - i : yabai -m window --swap first
-
-## Swap focused window with the window under the mouse cursor
-ctrl + alt - m : yabai -m window --swap mouse
-
-## Swap focused window with the previous or most recent window
-ctrl + alt - o : yabai -m window --swap prev
-ctrl + alt - p : yabai -m window --swap recent
-
-## Move focused window and split directionally
-ctrl + alt - j : yabai -m window --warp south
-ctrl + alt - k : yabai -m window --warp north
-ctrl + alt - h : yabai -m window --warp west
-ctrl + alt - l : yabai -m window --warp east
-
-## Move focused window to display left or right and focus that display
+# Moving Windows Between Displays
 shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
 shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
 
-## Move focused window to previous or next space
-shift + alt - p : yabai -m window --space prev;
-shift + alt - n : yabai -m window --space next;
+# Move focused window and split directionally
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - l : yabai -m window --warp east
 
-## Move focused window to specific space #
-shift + alt - 1 : yabai -m window --space 1;
-shift + alt - 2 : yabai -m window --space 2;
-shift + alt - 3 : yabai -m window --space 3;
-shift + alt - 4 : yabai -m window --space 4;
-shift + alt - 5 : yabai -m window --space 5;
-shift + alt - 6 : yabai -m window --space 6;
-shift + alt - 7 : yabai -m window --space 7;
-
-# --- Starting/Stopping/Restarting Yabai ---
-
-## Control Yabai service with brew
+# Yabai Control
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
 
-
 # Toggle sketchybar
 shift + alt - space : sketchybar --bar hidden=toggle
 
-# --- Miscellaneous ---
-# Uncomment these lines if you want to set the layout of the current space to stack or bsp
-#yabai -m space --layout stack
-#yabai -m space --layout bsp
-
-# Uncomment this line if you want to toggle float for the focused window and toggle its border
-# shift + cmd - space : \
-#    yabai -m window --toggle float; \
-#    yabai -m window --toggle border
-
-
-# Cycle through spaces clockwise and counterclockwise
-#alt - n : bash ~/.config/skhd/scripts/cycle_clockwise.sh
-#alt - p : bash ~/.config/skhd/scripts/cycle_counterclockwise.sh
+# Toggle window
+shift + cmd - space : \
+    yabai -m window --toggle float; \
+    yabai -m window --toggle border --grid 1:1:0:0:1:1
