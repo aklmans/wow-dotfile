@@ -1,111 +1,156 @@
-# SKHD Configuration Keybindings
+# SKHD Configuration for Yabai
 
-This document outlines the keybindings configured in the `skhd` configuration file for managing windows using `yabai` and opening applications.
+This repository contains the SKHD (Simple Hotkey Daemon) configuration for use with the Yabai window manager on macOS.
 
-## Application Shortcuts
+## Table of Contents
 
-| Key Combination | Action             |
-| --------------- | ------------------ |
-| `cmd - 5`       | Open VSCode        |
-| `cmd - 6`       | Open Warp          |
-| `cmd - 7`       | Open Typora        |
-| `cmd - 8`       | Open Firefox       |
-| `cmd - 9`       | Open WezTerm       |
-| `cmd - 0`       | Open Google Chrome |
+- [Installation](#installation)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+    - [Stack Navigation](#stack-navigation)
+    - [Window Navigation](#window-navigation)
+    - [Display Navigation](#display-navigation)
+    - [Modifying Layout](#modifying-layout)
+    - [Window Size Modification](#window-size-modification)
+    - [Window Resizing](#window-resizing)
+    - [Moving Windows](#moving-windows)
+    - [Moving Windows Between Displays](#moving-windows-between-displays)
+    - [Move and Split](#move-and-split)
+    - [Yabai Control](#yabai-control)
+    - [Miscellaneous](#miscellaneous)
+- [Customization](#customization)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Stack Navigation
+## Installation
 
-| Key Combination | Action                        |
-| --------------- | ----------------------------- |
-| `alt - n`       | Focus next stacked window     |
-| `alt - p`       | Focus previous stacked window |
+1. Ensure you have SKHD and Yabai installed on your system.
+2. Clone this repository or download the `.skhdrc` file.
+3. Place the `.skhdrc` file in your home directory (`~/.skhdrc`).
+4. Restart the SKHD service to apply the new configuration:
 
-## Navigation
+   ```
+   skhd --restart
+   ```
 
-| Key Combination | Action                       |
-| --------------- | ---------------------------- |
-| `alt - j`       | Change focus to window south |
-| `alt - k`       | Change focus to window north |
-| `alt - h`       | Change focus to window west  |
-| `alt - l`       | Change focus to window east  |
-| `alt - s`       | Change focus to display west |
-| `alt - g`       | Change focus to display east |
+## Keyboard Shortcuts
 
-## Modifying the Layout
+### Stack Navigation
 
-| Key Combination          | Action                                                      |
-| ------------------------ | ----------------------------------------------------------- |
-| `shift + alt - r`        | Rotate layout clockwise                                     |
-| `shift + alt - y`        | Flip layout along y-axis                                    |
-| `shift + alt - x`        | Flip layout along x-axis                                    |
-| `shift + ctrl + cmd - h` | Set insertion point for focused container to the west       |
-| `shift + ctrl + cmd - j` | Set insertion point for focused container to the south      |
-| `shift + ctrl + cmd - k` | Set insertion point for focused container to the north      |
-| `shift + ctrl + cmd - l` | Set insertion point for focused container to the east       |
-| `shift + alt - t`        | Toggle window float and set grid size                       |
-| `shift + alt - v`        | Toggle split mode for the focused window                    |
-| `shift + alt - m`        | Stack focused window with the window under the mouse cursor |
+| Shortcut          | Action                                              |
+|-------------------|-----------------------------------------------------|
+| `shift + alt - m` | Stack focused window with window under mouse cursor |
+| `alt - n`         | Focus next stacked window                           |
+| `alt - p`         | Focus previous stacked window                       |
 
-## Modifying Window Size
+### Window Navigation
 
-| Key Combination      | Action                                |
-| -------------------- | ------------------------------------- |
-| `shift + alt - z`    | Maximize a window                     |
-| `alt + cmd - f`      | Toggle native fullscreen for a window |
-| `shift + alt - e`    | Balance out tree of windows           |
-| `ctrl + cmd - left`  | Resize window left                    |
-| `ctrl + cmd - down`  | Resize window down                    |
-| `ctrl + cmd - up`    | Resize window up                      |
-| `ctrl + cmd - right` | Resize window right                   |
+| Shortcut  | Action                    |
+|-----------|---------------------------|
+| `alt - h` | Focus window to the left  |
+| `alt - j` | Focus window below        |
+| `alt - k` | Focus window above        |
+| `alt - l` | Focus window to the right |
 
-## Moving Windows Aroun
+### Display Navigation
 
-| Key Combination   | Action                                                     |
-| ----------------- | ---------------------------------------------------------- |
-| `shift + alt - j` | Swap with window south                                     |
-| `shift + alt - k` | Swap with window north                                     |
-| `shift + alt - h` | Swap with window west                                      |
-| `shift + alt - l` | Swap with window east                                      |
-| `shift + alt - i` | Move window to the "main" location                         |
-| `ctrl + alt - m`  | Swap focused window with the window under the mouse cursor |
-| `ctrl + alt - o`  | Swap focused window with the previous window               |
-| `ctrl + alt - p`  | Swap focused window with the most recent window            |
-| `ctrl + alt - j`  | Move focused window south                                  |
-| `ctrl + alt - k`  | Move focused window north                                  |
-| `ctrl + alt - h`  | Move focused window west                                   |
-| `ctrl + alt - l`  | Move focused window east                                   |
+| Shortcut  | Action                     |
+|-----------|----------------------------|
+| `alt - s` | Focus display to the left  |
+| `alt - g` | Focus display to the right |
 
-## Moving Windows Between Displays and Spaces
+### Modifying Layout
 
-| Key Combination      | Action                                                     |
-| -------------------- | ---------------------------------------------------------- |
-| `shift + alt - s`    | Move focused window to display west and focus that display |
-| `shift + alt - g`    | Move focused window to display east and focus that display |
-| `shift + alt - p`    | Move focused window to previous space                      |
-| `shift + alt - n`    | Move focused window to next space                          |
-| `shift + alt - 1..7` | Move focused window to specific space (1-7)                |
+| Shortcut          | Action                     |
+|-------------------|----------------------------|
+| `shift + alt - r` | Rotate layout 270 degrees  |
+| `shift + alt - y` | Mirror layout along y-axis |
+| `shift + alt - x` | Mirror layout along x-axis |
+| `shift + alt - t` | Toggle float and set grid  |
+| `shift + alt - v` | Toggle split               |
 
-## Starting/Stopping/Restarting Yabai
+### Window Size Modification
 
-| Key Combination  | Action                |
-| ---------------- | --------------------- |
-| `ctrl + alt - q` | Stop Yabai service    |
-| `ctrl + alt - s` | Start Yabai service   |
-| `ctrl + alt - r` | Restart Yabai service |
+| Shortcut                               | Action                   |
+|----------------------------------------|--------------------------|
+| `alt - f`                              | Toggle zoom-fullscreen   |
+| `shift + alt - f`                      | Toggle native fullscreen |
+| `shift + alt - e` or `shift + alt - 0` | Balance space            |
 
-## Miscellaneous
+### Window Resizing
 
-Uncomment these lines if you want to set the layout of the current space to stack or bsp:
+| Shortcut             | Action              |
+|----------------------|---------------------|
+| `ctrl + alt - left`  | Resize window left  |
+| `ctrl + alt - down`  | Resize window down  |
+| `ctrl + alt - up`    | Resize window up    |
+| `ctrl + alt - right` | Resize window right |
 
-```sh
-# yabai -m space --layout stack
-# yabai -m space --layout bsp
-```
+### Moving Windows
 
-Uncomment this line if you want to toggle float for the focused window and toggle its border:
+| Shortcut          | Action                    |
+|-------------------|---------------------------|
+| `shift + alt - h` | Swap window left          |
+| `shift + alt - j` | Swap window down          |
+| `shift + alt - k` | Swap window up            |
+| `shift + alt - l` | Swap window right         |
+| `shift + alt - 1` | Swap with first window    |
+| `shift + alt - p` | Swap with previous window |
+| `shift + alt - n` | Swap with next window     |
 
-```sh
-# shift + cmd - space : \
-#    yabai -m window --toggle float; \
-#    yabai -m window --toggle border
-```
+### Moving Windows Between Displays
+
+| Shortcut          | Action                                 |
+|-------------------|----------------------------------------|
+| `shift + alt - s` | Move window to left display and focus  |
+| `shift + alt - g` | Move window to right display and focus |
+
+### Move and Split
+
+| Shortcut         | Action                      |
+|------------------|-----------------------------|
+| `ctrl + alt - h` | Move window left and split  |
+| `ctrl + alt - j` | Move window down and split  |
+| `ctrl + alt - k` | Move window up and split    |
+| `ctrl + alt - l` | Move window right and split |
+
+### Yabai Control
+
+| Shortcut         | Action        |
+|------------------|---------------|
+| `ctrl + alt - q` | Stop Yabai    |
+| `ctrl + alt - s` | Start Yabai   |
+| `ctrl + alt - r` | Restart Yabai |
+
+### Miscellaneous
+
+| Shortcut              | Action                         |
+|-----------------------|--------------------------------|
+| `shift + alt - space` | Toggle sketchybar visibility   |
+| `shift + cmd - space` | Toggle window float and border |
+
+## Customization
+
+Feel free to modify the `.skhdrc` file to suit your personal preferences. After making changes, remember to restart the
+SKHD service for them to take effect.
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. Check that SKHD and Yabai are running correctly.
+2. Ensure there are no conflicting system shortcuts.
+3. Review the SKHD log for any error messages:
+
+   ```
+   tail -f /tmp/skhd.log
+   ```
+
+## Contributing
+
+Contributions to improve this configuration are welcome. Please submit a pull request or open an issue to discuss
+proposed changes.
+
+## License
+
+This configuration is released under the MIT License. See the LICENSE file for details.
