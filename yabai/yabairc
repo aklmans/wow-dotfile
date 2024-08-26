@@ -44,81 +44,96 @@ yabai -m config                                 \
     mouse_drop_action            swap
 
 
-# ===== Rules ==================================
-yabai -m rule --add app="^(LuLu|Calculator|SoftwareUpdate|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
-yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
-yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+# ===== 规则 ==================================
+# 定义需要管理的应用规则
+declare -A APP_RULES=(
+    ["^(LuLu|Calculator|SoftwareUpdate|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$"]="off"
+    ["^Finder$"]="off"
+    ["^Safari$"]="off"
+    ["System Information"]="off"
+    ["^Inkscape$"]="off"
+    ["^飞书$"]="sticky=on layer=above manage=off"
+    ["^Feishu$"]="sticky=on layer=above manage=off"
+    ["^Lark$"]="sticky=on layer=above manage=off"
+    ["^Lark Meetings$"]="sticky=on layer=above manage=off"
+    ["^Seal$"]="sticky=on layer=above manage=off"
+    ["^AppCleaner$"]="sticky=off layer=above manage=off"
+    ["^Karabiner-Elements$"]="sticky=on layer=above manage=off"
+    ["^Karabiner-EventViewer$"]="sticky=on layer=above manage=off"
+    ["^WeChat$"]="off"
+    ["^微信$"]="off"
+    ["^Clash for Windows$"]="off"
+    ["Dash"]="off"
+    ["^WeCom$"]="off"
+    ["^企业微信$"]="off"
+    ["^BaiduIM$"]="off"
+    ["^Pieces$"]="off"
+    ["^Loopback$"]="off"
+    ["^钉钉$"]="off"
+    ["^DingTalk$"]="off"
+    ["^(Tencent Lemon)$"]="off"
+    ["^(Bandizip)$"]="off"
+)
 
-yabai -m rule --add app="^飞书$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Feishu$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Lark$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Lark Meetings$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Seal$" sticky=on layer=above manage=off
-yabai -m rule --add app="^AppCleaner$" sticky=off layer=above manage=off
-yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
-# yabai -m rule --add app="^Things$" manage=off
-# yabai -m rule --add app="^Magnet$" manage=off
-yabai -m rule --add app="^WeChat$" manage=off
-yabai -m rule --add app="^微信$" manage=off
-yabai -m rule --add app="^Clash for Windows$" manage=off
-yabai -m rule --add app="Dash" manage=off
-yabai -m rule --add app="^WeCom$" manage=off
-yabai -m rule --add app="^企业微信$" manage=off
-yabai -m rule --add app="^BaiduIM$" manage=off
+# 应用规则
+for app in "${!APP_RULES[@]}"; do
+    manage_option=${APP_RULES[$app]}
+    yabai -m rule --add app="$app" manage="$manage_option"
+done
 
-yabai -m rule --add app="^Pieces$" manage=off
-yabai -m rule --add app="^Loopback$" manage=off
-yabai -m rule --add app="^钉钉$" manage=off
-yabai -m rule --add app="^DingTalk$" manage=off
-yabai -m rule --add app="^(Tencent Lemon)$" manage=off
-yabai -m rule --add app="^(Bandizip)$" manage=off
+# 需要浮动的通用窗口标题
+FLOAT_TITLES=(
+    "Settings"
+    "Add File to Git"
+    "Delete"
+    "Deployment"
+    "New Project"
+    "Create New Branch"
+    "Create Class"
+    "Project Structure"
+    "Run Target"
+    "Run/Debug Configurations"
+    "Data Sources and Drivers"
+    "Rename"
+    "File Cache Conflict"
+    "Push Commits to .*"
+    "Create Run Configuration: .*"
+    "Local History: .*"
+    "Commit Changes"
+    "Update Project"
+    "Merge Branches"
+    "Rebase Branches"
+    "Find in Path"
+    "Replace in Path"
+    "Diff"
+    "Version Control"
+    "Create Gist"
+)
 
-# 使 GoLand 的窗口不浮动
-yabai -m rule --add app="^GoLand$" manage=on
-# 使 GoLand 的特定窗口浮动
-yabai -m rule --add app="^(GoLand)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename|File Cache Conflict)$" manage=off
-yabai -m rule --add app="^GoLand$" title="^Push Commits to .*$" manage=off
-yabai -m rule --add app="^GoLand$" title="^Create Run Configuration: .*$" manage=off
+# 配置 IDE 函数
+configure_ide() {
+    local app_name="$1"
 
-# 使 IntelliJ IDEA 的窗口不浮动
-yabai -m rule --add app="^(IntelliJ IDEA)$" manage=on
-# 使 IntelliJ IDEA 的设置窗口浮动
-yabai -m rule --add app="^(IntelliJ IDEA)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
-yabai -m rule --add app="^(IntelliJ IDEA)$" title="^Push Commits to .*$" manage=off
-yabai -m rule --add app="^(IntelliJ IDEA)$" title="^Create Run Configuration: .*$" manage=off
+    # 设置 IDE 主窗口为非浮动
+    yabai -m rule --add app="^${app_name}$" manage=on
 
-# 使 IntelliJ IDEA 的窗口不浮动
-yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" manage=on
-# 使 IntelliJ IDEA 的设置窗口浮动
-yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
-yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^Push Commits to .*$" manage=off
-yabai -m rule --add app="^(IntelliJ IDEA-EAP)$" title="^Create Run Configuration: .*$" manage=off
+    # 设置特定标题的窗口为浮动
+    for title in "${FLOAT_TITLES[@]}"; do
+        yabai -m rule --add app="^${app_name}$" title="^${title}$" manage=off
+    done
+}
 
-# 使 WebStorm 的窗口不浮动
-yabai -m rule --add app="^(WebStorm)$" title!="^Settings$" manage=on
-# 使 WebStorm 的设置窗口浮动
+# 配置各个 IDE
+IDE_APPS=(
+    "GoLand"
+    "IntelliJ IDEA"
+    "IntelliJ IDEA-EAP"
+    "WebStorm"
+    "PhpStorm"
+    "RustRover"
+)
 
-yabai -m rule --add app="^(WebStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
-yabai -m rule --add app="^(WebStorm)$" title="^Push Commits to .*$" manage=off
-yabai -m rule --add app="^(WebStorm)$" title="^Create Run Configuration: .*$" manage=off
-
-# 使 PhpStorm 的窗口不浮动
-yabai -m rule --add app="^(PhpStorm)$" manage=on
-# 使 PhpStorm 的设置窗口浮动
-yabai -m rule --add app="^(PhpStorm)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
-yabai -m rule --add app="^(PhpStorm)$" title="^Push Commits to .*$" manage=off
-yabai -m rule --add app="^(PhpStorm)$" title="^Create Run Configuration: .*$" manage=off
-
-# 使 Rust Rover 的窗口不浮动
-yabai -m rule --add app="^(RustRover)$" manage=on
-# 使 Rust Rover 的设置窗口浮动
-yabai -m rule --add app="^(RustRover)$" title="^(Settings|Add File to Git|Delete|Deployment|New Project|Create New Branch|Create Class|Project Structure|Run Target|Run/Debug Configurations|Data Sources and Drivers|Rename)$" manage=off
-yabai -m rule --add app="^(PhpStorm)$" title="^Push Commits to .*$" manage=off
-yabai -m rule --add app="^(RustRover)$" title="^Create Run Configuration: .*$" manage=off
-
-yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off layer=above
-
-echo "yabai configuration loaded.."
+# 批量配置 IDE
+for ide in "${IDE_APPS[@]}"; do
+    configure_ide "$ide"
+done
