@@ -44,46 +44,48 @@ yabai -m config                                 \
     mouse_drop_action            swap
 
 
-# ===== 规则 ==================================
-# 定义需要管理的应用规则
-declare -A APP_RULES=(
-    ["^(LuLu|Calculator|SoftwareUpdate|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$"]="off"
-    ["^Finder$"]="off"
-    ["^Safari$"]="off"
-    ["System Information"]="off"
-    ["^Inkscape$"]="off"
-    ["^飞书$"]="sticky=on layer=above manage=off"
-    ["^Feishu$"]="sticky=on layer=above manage=off"
-    ["^Lark$"]="sticky=on layer=above manage=off"
-    ["^Lark Meetings$"]="sticky=on layer=above manage=off"
-    ["^Seal$"]="sticky=on layer=above manage=off"
-    ["^AppCleaner$"]="sticky=off layer=above manage=off"
-    ["^Karabiner-Elements$"]="sticky=on layer=above manage=off"
-    ["^Karabiner-EventViewer$"]="sticky=on layer=above manage=off"
-    ["^WeChat$"]="off"
-    ["^微信$"]="off"
-    ["^Clash for Windows$"]="off"
-    ["Dash"]="off"
-    ["^WeCom$"]="off"
-    ["^企业微信$"]="off"
-    ["^BaiduIM$"]="off"
-    ["^Pieces$"]="off"
-    ["^Loopback$"]="off"
-    ["^钉钉$"]="off"
-    ["^DingTalk$"]="off"
-    ["^(Tencent Lemon)$"]="off"
-    ["^(Bandizip)$"]="off"
-)
+# ===== Rules ==================================
+yabai -m rule --add app="^(LuLu|Calculator|SoftwareUpdate|Dictionary|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|App Store|Activity Monitor)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+# yabai -m rule --add label="Orion" app="^Orion$" manage=off grid=100:100:2:2:96:92
 
-# 应用规则
-for app in "${!APP_RULES[@]}"; do
-    manage_option=${APP_RULES[$app]}
-    yabai -m rule --add app="$app" manage="$manage_option"
-done
+yabai -m rule --add label="NeteaseMusic" app="NeteaseMusic" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^Discord$" grid=1:1:0:0:1:1 manage=off
+yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=100:100:2:2:96:92
 
-# 需要浮动的通用窗口标题
+yabai -m rule --add app="^飞书$" sticky=on layer=above manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^Feishu$" sticky=on layer=above manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^Lark$" sticky=on layer=above manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^Lark Meetings$" sticky=on layer=above manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^Seal$" sticky=on layer=above manage=off
+yabai -m rule --add app="^AppCleaner$" sticky=off layer=above manage=off
+yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Things$" manage=off grid=100:100:2:2:96:92
+
+yabai -m rule --add app="^WeChat$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^微信$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^Clash for Windows$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="Dash" manage=off
+yabai -m rule --add app="^WeCom$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^企业微信$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^BaiduIM$" manage=off manage=off grid=100:100:2:2:96:92
+
+yabai -m rule --add app="^Pieces$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^Loopback$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^钉钉$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^DingTalk$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^(Tencent Lemon)$" manage=off grid=100:100:2:2:96:92
+yabai -m rule --add app="^(Bandizip)$" manage=off grid=100:100:2:2:96:92
+
+# 定义需要浮动的通用窗口标题
+# 定义需要浮动的通用窗口标题
 FLOAT_TITLES=(
     "Settings"
+    "Preferences"
     "Add File to Git"
     "Delete"
     "Deployment"
@@ -108,6 +110,89 @@ FLOAT_TITLES=(
     "Diff"
     "Version Control"
     "Create Gist"
+    "Copy"
+    "Copy Class"
+    "Get from Version Control"
+    "Refactor"
+    "Extract"
+    "Inspect Code"
+    "Code Cleanup"
+    "Code Style"
+    "Generate"
+    "New File"
+    "New Directory"
+    "Move"
+    "Find Usages"
+    "Show Usages"
+    "Go to Declaration"
+    "Go to Implementation"
+    "Go to Type Declaration"
+    "Go to Super Method"
+    "Parameter Info"
+    "Quick Definition"
+    "Quick Documentation"
+    "Change Signature"
+    "Surround With"
+    "Reformat Code"
+    "Optimize Imports"
+    "Run Inspection by Name"
+    "Run"
+    "Debug"
+    "Edit Configurations"
+    "Attach to Process"
+    "Compare With"
+    "Show History"
+    "Shelve Changes"
+    "Unshelve Changes"
+    "Branches"
+    "Git Repository"
+    "Pull"
+    "Fetch"
+    "Stash"
+    "Unstash"
+    "Revert"
+    "Cherry-Pick"
+    "Analyze"
+    "Profiler"
+    "Coverage"
+    "Diagrams"
+    "Database"
+    "SSH Terminal"
+    "Remote Host"
+    "Docker"
+    "Kubernetes"
+    "Terminal"
+    "Problems"
+    "TODO"
+    "Structure"
+    "Bookmarks"
+    "Breakpoints"
+    "Evaluate Expression"
+    "Variables"
+    "Watches"
+    "Threads"
+    "Call Stack"
+    "Memory View"
+    "Console"
+    "Services"
+    "Project"
+    "Packages"
+    "Hierarchy"
+    "Find"
+    "Replace"
+    "Recent Files"
+    "Recent Changes"
+    "File Structure"
+    "Type Hierarchy"
+    "Method Hierarchy"
+    "Call Hierarchy"
+    "Module Dependencies"
+    "Maven Projects"
+    "Gradle Projects"
+    "NPM"
+    "Run Anything"
+    "VCS Operations"
+    "Commit Message History"
 )
 
 # 配置 IDE 函数
@@ -119,21 +204,18 @@ configure_ide() {
 
     # 设置特定标题的窗口为浮动
     for title in "${FLOAT_TITLES[@]}"; do
-        yabai -m rule --add app="^${app_name}$" title="^${title}$" manage=off
+      yabai -m rule --add app="^${app_name}$" title="^${title}$" manage=off
     done
 }
 
 # 配置各个 IDE
-IDE_APPS=(
-    "GoLand"
-    "IntelliJ IDEA"
-    "IntelliJ IDEA-EAP"
-    "WebStorm"
-    "PhpStorm"
-    "RustRover"
-)
+configure_ide "GoLand"
+configure_ide "IntelliJ IDEA"
+configure_ide "IntelliJ IDEA-EAP"
+configure_ide "WebStorm"
+configure_ide "PhpStorm"
+configure_ide "RustRover"
 
-# 批量配置 IDE
-for ide in "${IDE_APPS[@]}"; do
-    configure_ide "$ide"
-done
+yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off layer=above
+
+echo "yabai configuration loaded.."
