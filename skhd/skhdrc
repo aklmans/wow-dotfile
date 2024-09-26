@@ -1,12 +1,11 @@
 # --- Application Shortcuts ---
 
 # Open applications
-#cmd - 5 : bash ~/.config/skhd/scripts/open_vscode.sh
-#cmd - 6 : bash ~/.config/skhd/scripts/open_warp.sh
-#cmd - 7 : bash ~/.config/skhd/scripts/open_typora.sh
-#cmd - 8 : bash ~/.config/skhd/scripts/open_firefox.sh
-#cmd - 9 : bash ~/.config/skhd/scripts/open_wezterm.sh
-#cmd - 0 : bash ~/.config/skhd/scripts/open_google.sh
+alt - w : bash ~/.config/skhd/scripts/open_wezterm.sh
+alt - v : bash ~/.config/skhd/scripts/open_vscode.sh
+alt - t : bash ~/.config/skhd/scripts/open_typora.sh
+alt - z : bash ~/.config/skhd/scripts/open_zen.sh
+alt - c : bash ~/.config/skhd/scripts/open_cursor.sh
 
 # Stack Navigation
 # Stack focused window with the window under the mouse cursor
@@ -38,15 +37,6 @@ shift + alt - e : yabai -m space --balance
 shift + alt - 0 : yabai -m space --balance
 
 # Window Resizing
-
-#ctrl - h : yabai -m window --resize left:-50:0; yabai -m window --resize right:-10:0
-#ctrl - j : yabai -m window --resize bottom:0:50; yabai -m window --resize top:0:10
-#ctrl - k : yabai -m window --resize top:0:-50; yabai -m window --resize bottom:0:-10
-#ctrl - l : yabai -m window --resize right:50:0; yabai -m window --resize left:10:0
-#shift + ctrl - h : yabai -m window --resize left:-50:0; yabai -m window --resize right:-50:0
-#shift + ctrl - j : yabai -m window --resize bottom:0:50; yabai -m window --resize top:0:50
-#shift + ctrl - k : yabai -m window --resize top:0:-50; yabai -m window --resize bottom:0:-50
-#shift + ctrl - l : yabai -m window --resize right:50:0; yabai -m window --resize left:50:0
 ctrl + alt - left  : yabai -m window --resize left:-50:0; yabai -m window --resize right:-50:0
 ctrl + alt - down  : yabai -m window --resize bottom:0:50; yabai -m window --resize top:0:50
 ctrl + alt - up    : yabai -m window --resize top:0:-50; yabai -m window --resize bottom:0:-50
