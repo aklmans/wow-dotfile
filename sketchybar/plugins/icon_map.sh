@@ -51,7 +51,7 @@ function __icon_map() {
    "App Store")
         icon_result=":app_store:"
         ;;
-   "Arc")
+   "Arc" |  "Dia")
         icon_result=":arc:"
         ;;
    "Atom")
@@ -448,7 +448,7 @@ function __icon_map() {
         icon_result=":pycharm:"
         ;;
    "PhpStorm")
-        icon_result=":idea:"
+        icon_result=":pycharm:"
         ;;
    "QQ")
         icon_result=":qq:"
@@ -629,6 +629,9 @@ function __icon_map() {
         ;;
    "Zotero")
         icon_result=":zotero:"
+        ;;
+   "Cursor Teleporter")
+        icon_result=":zeplin:"
         ;;
    "Zulip")
         icon_result=":zulip:"
