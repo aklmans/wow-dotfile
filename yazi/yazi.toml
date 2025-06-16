@@ -4,7 +4,7 @@
 
 [manager]
 ratio = [1, 4, 3]
-sort_by = "modified"
+sort_by = "mtime"
 sort_sensitive = false
 sort_reverse = true
 sort_dir_first = true
@@ -88,103 +88,102 @@ open_offset = [0, 1, 50, 7]
 enabled = false
 
 
-
 [opener]
 edit = [
-    { run = 'nvim "$@"', block = true, for = "unix" },
-    { run = 'code "%*"', orphan = true, for = "windows" },
+  { run = 'nvim "$@"', block = true, for = "unix" },
+  { run = 'code "%*"', orphan = true, for = "windows" },
 ]
 open = [
-    { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
-    { run = 'open "$@"', desc = "Open", for = "macos" },
-    { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+  { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+  { run = 'open "$@"', desc = "Open", for = "macos" },
+  { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
-    { run = 'open -R "$1"', desc = "Reveal", for = "macos" },
-    { run = 'explorer /select, "%1"', orphan = true, desc = "Reveal", for = "windows" },
-    { run = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF", for = "unix" },
+  { run = 'open -R "$1"', desc = "Reveal", for = "macos" },
+  { run = 'explorer /select, "%1"', orphan = true, desc = "Reveal", for = "windows" },
+  { run = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 extract = [
-    { run = 'unar "$1"', desc = "Extract here", for = "unix" },
-    { run = 'unar "%1"', desc = "Extract here", for = "windows" },
+  { run = 'unar "$1"', desc = "Extract here", for = "unix" },
+  { run = 'unar "%1"', desc = "Extract here", for = "windows" },
 ]
 play = [
-    { run = 'mpv "$@"', orphan = true, for = "unix" },
-    { run = 'mpv "%1"', orphan = true, for = "windows" },
-    { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
+  { run = 'mpv "$@"', orphan = true, for = "unix" },
+  { run = 'mpv "%1"', orphan = true, for = "windows" },
+  { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
 
 [open]
 rules = [
-    { name = "*/", use = [
-        "edit",
-        "open",
-        "reveal",
-    ] },
-    { name = "text/*", use = [
-        "edit",
-        "reveal",
-    ] },
-    { name = "image/*", use = [
-        "open",
-        "reveal",
-    ] },
-    { name = "video/*", use = [
-        "play",
-        "reveal",
-    ] },
-    { name = "audio/*", use = [
-        "play",
-        "reveal",
-    ] },
-    { name = "inode/x-empty", use = [
-        "edit",
-        "reveal",
-    ] },
-    { name = "application/json", use = [
-        "edit",
-        "reveal",
-    ] },
-    { name = "*/javascript", use = [
-        "edit",
-        "reveal",
-    ] },
-    { name = "application/zip", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "application/gzip", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "application/x-tar", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "application/x-bzip", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "application/x-bzip2", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "application/x-7z-compressed", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "application/x-rar", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "application/xz", use = [
-        "extract",
-        "reveal",
-    ] },
-    { name = "*", use = [
-        "open",
-        "reveal",
-    ] },
+  { name = "*/", use = [
+    "edit",
+    "open",
+    "reveal",
+  ] },
+  { name = "text/*", use = [
+    "edit",
+    "reveal",
+  ] },
+  { name = "image/*", use = [
+    "open",
+    "reveal",
+  ] },
+  { name = "video/*", use = [
+    "play",
+    "reveal",
+  ] },
+  { name = "audio/*", use = [
+    "play",
+    "reveal",
+  ] },
+  { name = "inode/x-empty", use = [
+    "edit",
+    "reveal",
+  ] },
+  { name = "application/json", use = [
+    "edit",
+    "reveal",
+  ] },
+  { name = "*/javascript", use = [
+    "edit",
+    "reveal",
+  ] },
+  { name = "application/zip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "application/gzip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "application/x-tar", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "application/x-bzip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "application/x-bzip2", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "application/x-7z-compressed", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "application/x-rar", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "application/xz", use = [
+    "extract",
+    "reveal",
+  ] },
+  { name = "*", use = [
+    "open",
+    "reveal",
+  ] },
 ]
 
 [tasks]
@@ -197,63 +196,63 @@ suppress_preload = false
 
 [plugin]
 prepend_previewers = [
-    # GLOW
-    { name = "*.md", run = "glow" },
-    { name = "*.csv", run = "rich-preview" }, # for csv files
-    #    { name = "*.md", run = "rich-preview" }, # for markdown (.md) files
-    { name = "*.ipynb", run = "rich-preview" }, # for jupyter notebooks (.ipynb)
-    { name = "*.json", run = "rich-preview" }, # for json (.json) files
-    #    { name = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
-    # EXIFAUDIO
-    { name = "audio/*", run = "exifaudio" },
-    # OUCH
-    { name = "application/zip", run = "ouch" },
-    { name = "application/gzip", run = "ouch" },
-    { name = "application/x-tar", run = "ouch" },
-    { name = "application/x-bzip", run = "ouch" },
-    { name = "application/x-bzip2", run = "ouch" },
-    { name = "application/x-7z-compressed", run = "ouch" },
-    { name = "application/x-rar", run = "ouch" },
-    { name = "application/x-xz", run = "ouch" },
+  # GLOW
+  { name = "*.md", run = "glow" },
+  { name = "*.csv", run = "rich-preview" }, # for csv files
+  #    { name = "*.md", run = "rich-preview" }, # for markdown (.md) files
+  { name = "*.ipynb", run = "rich-preview" }, # for jupyter notebooks (.ipynb)
+  { name = "*.json", run = "rich-preview" },  # for json (.json) files
+  #    { name = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
+  # EXIFAUDIO
+  { name = "audio/*", run = "exifaudio" },
+  # OUCH
+  { name = "application/zip", run = "ouch" },
+  { name = "application/gzip", run = "ouch" },
+  { name = "application/x-tar", run = "ouch" },
+  { name = "application/x-bzip", run = "ouch" },
+  { name = "application/x-bzip2", run = "ouch" },
+  { name = "application/x-7z-compressed", run = "ouch" },
+  { name = "application/x-rar", run = "ouch" },
+  { name = "application/x-xz", run = "ouch" },
 ]
 
 
 preloaders = [
-    # Image
-    { name = "image/vnd.djvu", run = "noop" },
-    { name = "image/*", run = "image" },
-    # Video
-    { name = "video/*", run = "video" },
-    # PDF
-    { name = "application/pdf", run = "pdf" },
+  # Image
+  { name = "image/vnd.djvu", run = "noop" },
+  { name = "image/*", run = "image" },
+  # Video
+  { name = "video/*", run = "video" },
+  # PDF
+  { name = "application/pdf", run = "pdf" },
 ]
 
 previewers = [
-    { name = "*/", run = "folder", sync = true },
-    # Code
-    { mime = "text/*", run = "code" },
-    { mime = "*/xml", run = "code" },
-    { mime = "*/javascript", run = "code" },
-    { mime = "*/x-wine-extension-ini", run = "code" },
-    # JSON
-    { mime = "application/json", run = "json" },
-    # Image
-    { mime = "image/*", run = "image" },
-    # Video
-    { mime = "video/*", run = "video" },
-    # PDF
-    { mime = "application/pdf", run = "pdf" },
-    # CSV
-    { name = "*.csv", run = "preview" },
-    # Archive
-    { mime = "application/zip", run = "archive" },
-    { mime = "application/gzip", run = "archive" },
-    { mime = "application/x-tar", run = "archive" },
-    { mime = "application/x-bzip", run = "archive" },
-    { mime = "application/x-bzip2", run = "archive" },
-    { mime = "application/x-7z-compressed", run = "archive" },
-    { mime = "application/x-rar", run = "archive" },
-    { mime = "application/xz", run = "archive" },
-    # Others
-    { name = "*", run = "preview" },
+  { name = "*/", run = "folder", sync = true },
+  # Code
+  { mime = "text/*", run = "code" },
+  { mime = "*/xml", run = "code" },
+  { mime = "*/javascript", run = "code" },
+  { mime = "*/x-wine-extension-ini", run = "code" },
+  # JSON
+  { mime = "application/json", run = "json" },
+  # Image
+  { mime = "image/*", run = "image" },
+  # Video
+  { mime = "video/*", run = "video" },
+  # PDF
+  { mime = "application/pdf", run = "pdf" },
+  # CSV
+  { name = "*.csv", run = "preview" },
+  # Archive
+  { mime = "application/zip", run = "archive" },
+  { mime = "application/gzip", run = "archive" },
+  { mime = "application/x-tar", run = "archive" },
+  { mime = "application/x-bzip", run = "archive" },
+  { mime = "application/x-bzip2", run = "archive" },
+  { mime = "application/x-7z-compressed", run = "archive" },
+  { mime = "application/x-rar", run = "archive" },
+  { mime = "application/xz", run = "archive" },
+  # Others
+  { name = "*", run = "preview" },
 ]
